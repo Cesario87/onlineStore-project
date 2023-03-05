@@ -26,7 +26,9 @@ const Main = () => {
       <div>
       {articles.map(article => (
         <div key={article.id}>
+          <img src={article.image} alt={article.name} style={{ width: '15%' }} />
           <h2>{article.name}</h2>
+          <p>{article.price}</p>
           <p>{article.valoration}</p>
         </div>
       ))}
