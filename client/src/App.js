@@ -1,5 +1,7 @@
 import './App.css';
+import Head from './components/Head';
 import Main from './components/Main';
+import Footer from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
 import React, { useState } from 'react';
 
@@ -18,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+       <Head/>
         <Main
           globalSortCriteria={globalSortCriteria}
           globalSortOrder={globalSortOrder}
@@ -25,6 +28,7 @@ function App() {
           handleGlobalSortOrderChange={handleGlobalSortOrderChange}
         />
       </BrowserRouter>
+      <Footer/>
     </div>
   );
 }
