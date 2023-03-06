@@ -8,7 +8,6 @@ const articlesRouter = require('./routes/articlesRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-console.log('PORT:', PORT);
 
 app.use(express.json());
 app.use(cors());
