@@ -1,20 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import Cards from "./Card";
 import axios from 'axios';
+import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
 const List = ({ sortCriteria, sortOrder }) => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
+  const numberItems = useSelector(state => state.numberItems);
+
+  const [scroll, setScroll] = useState(0);
+
+
+    const detectScroll = () => {
+        setScroll(window.pageYOffset);
+    }
+
+    let cart = document.getElementById("cartFixed");
+    useEffect(() => {
+        window.addEventListener('scroll', detectScroll)
+
+        if (scroll > 100) {
+            cart.style.position = "fixed";
+        }
+        else if (cart !== null) {
+            cart.style.position = "inherit";
+        }
+        return () => {
+            window.removeEventListener('scroll', detectScroll)
+        }
+        // eslint-disable-next-line
+    }, [scroll]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-
-  // const handleSearch = () => {
-  //   setCurrentPage(1);
-  // };
 
   useEffect(() => {
     async function fetchArticles() {
@@ -41,7 +63,12 @@ const List = ({ sortCriteria, sortOrder }) => {
       </div>
       {articles.map((article) => (
         <Cards key={article.id} article={article} />
+        
       ))}
+      <Link id='cartFixed' to="/cart" title='Shopping cart'>
+                    <img src="https://i.pinimg.com/originals/15/bb/55/15bb559cdd28f56d7c17b00498b4a946.png" alt="shopping cart" />
+                    <span>{numberItems}</span>
+                </Link>
       <div>
         <button onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
         <span>Page {currentPage}</span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import List from './List';
+import Cart from './Cart';
 
 const Main = ({ globalSortCriteria, globalSortOrder, handleGlobalSortCriteriaChange, handleGlobalSortOrderChange }) => {
   const updateSortCriteria = (criteria) => {
@@ -34,6 +35,7 @@ const Main = ({ globalSortCriteria, globalSortOrder, handleGlobalSortCriteriaCha
       </div>
       <Routes>
         <Route path="/" element={<List sortCriteria={globalSortCriteria} sortOrder={globalSortOrder} />} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </main>
   );
