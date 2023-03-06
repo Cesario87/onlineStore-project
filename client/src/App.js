@@ -1,19 +1,31 @@
 import './App.css';
-// import Head from './components/Head';
-// import Footer from './components/Footer';
 import Main from './components/Main';
-// import { userContext } from './context/userContext';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import React, { useState } from 'react';
 
 function App() {
+  const [globalSortCriteria, setGlobalSortCriteria] = useState('name');
+  const [globalSortOrder, setGlobalSortOrder] = useState('asc');
+
+  const handleGlobalSortOrderChange = (order) => {
+    setGlobalSortOrder(order);
+  };
+
+  const handleGlobalSortCriteriaChange = (criteria) => {
+    setGlobalSortCriteria(criteria);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Main />} />
-          </Routes>
+        <Main
+          globalSortCriteria={globalSortCriteria}
+          globalSortOrder={globalSortOrder}
+          handleGlobalSortCriteriaChange={handleGlobalSortCriteriaChange}
+          handleGlobalSortOrderChange={handleGlobalSortOrderChange}
+        />
       </BrowserRouter>
-    </div >
+    </div>
   );
 }
 

@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
+import List from './List';
 
-const Main = () => {
-  const [articles, setArticles] = useState([]);
-  console.log('MainArticles:', articles);
-  useEffect(() => {
-    async function fetchArticles() {
-      const response = await axios.get('http://localhost:5000/articles');
-      const articlesWithUUID = response.data.map(article => {
-        return {
-          ...article,
-          id: uuidv4() // Agregamos un nuevo campo "id" con un UUID único
-        }
-      })
-      setArticles(articlesWithUUID);
-    }
-    fetchArticles();
-    
-  }, []);
+const Main = ({ globalSortCriteria, globalSortOrder, handleGlobalSortCriteriaChange, handleGlobalSortOrderChange }) => {
+  const updateSortCriteria = (criteria) => {
+    handleGlobalSortCriteriaChange(criteria);
+  };
+
+  const updateSortOrder = (order) => {
+    handleGlobalSortOrderChange(order);
+  };
 
   return (
-    <div>
-      <h1>Articles</h1>
+    <main className="main">
       <div>
-      {articles.map(article => (
-        <div key={article.id}>
-          <img src={article.image} alt={article.name} style={{ width: '15%' }} />
-          <h2>{article.name}</h2>
-          <p>{article.price}</p>
-          <p>{article.valoration}</p>
-        </div>
-      ))}
-    </div>
-    </div>
+        <button onClick={() => updateSortCriteria('name')}>
+          Sort by Name
+        </button>
+        <button onClick={() => updateSortCriteria('price')}>
+          Sort by Price
+        </button>
+        <button onClick={() => updateSortCriteria('valoration')}>
+          Sort by Valoration
+        </button>
+      </div>
+      <div>
+        <button onClick={() => updateSortOrder('asc')}>
+          Ascending
+        </button>
+        <button onClick={() => updateSortOrder('desc')}>
+          Descending
+        </button>
+      </div>
+      <Routes>
+        <Route path="/" element={<List sortCriteria={globalSortCriteria} sortOrder={globalSortOrder} />} />
+      </Routes>
+    </main>
   );
-}
+};
 
 export default Main;
-
-
