@@ -1,7 +1,18 @@
-import React from "react";
+import React from 'react';
+// import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 
-const Head = () => {
-  return <div>Head</div>;
-};
+const Header = () => {
+  // const numberCart = useSelector(state => state.numberItems);
+  return (
+    <header>
+      <Link to="/"><h1>Store</h1></Link>
+      <Link to="/cart" title='Shopping cart' id='cartIconContainer'>
+        <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="shopping cart" />
+        {/* <span>{numberCart}</span> */}
+      </Link>
+    </header>
+  )
+}
 
-export default Head;
+export default Header
