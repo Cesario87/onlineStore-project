@@ -13,29 +13,28 @@ const Main = ({ globalSortCriteria, globalSortOrder, handleGlobalSortCriteriaCha
   };
 
   return (
-    <main className="main">
-      <div>
-        <button onClick={() => updateSortCriteria('name')}>
-          Sort by Name
-        </button>
-        <button onClick={() => updateSortCriteria('price')}>
-          Sort by Price
-        </button>
-        <button onClick={() => updateSortCriteria('valoration')}>
-          Sort by Valoration
-        </button>
-      </div>
-      <div>
-        <button onClick={() => updateSortOrder('asc')}>
-          Ascending
-        </button>
-        <button onClick={() => updateSortOrder('desc')}>
-          Descending
-        </button>
+    <main className="mainFormat">
+      <div id="botonera">
+        <p>Sort by:</p>
+          <button onClick={() => updateSortCriteria('name')}>
+            Name
+          </button>
+          <button onClick={() => updateSortCriteria('price')}>
+            Price
+          </button>
+          <button onClick={() => updateSortCriteria('valoration')}>
+            Valoration
+          </button>
+          <button onClick={() => updateSortOrder('asc')}>
+            ⬆️
+          </button>
+          <button onClick={() => updateSortOrder('desc')}>
+            ⬇️
+          </button>
       </div>
       <Routes>
         <Route path="/" element={<List sortCriteria={globalSortCriteria} sortOrder={globalSortOrder} />} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </main>
   );

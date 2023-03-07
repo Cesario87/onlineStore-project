@@ -15,15 +15,15 @@ const Cart = () => {
     });
 
     return (
-        <table className="table">
+        <table className="cartFormat">
             <thead>
                 <tr>
                     <th></th>
-                    <th>Name</th>
+                    <th></th>
                     <th>Image</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Total Price</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@ const Cart = () => {
                                 dispatch(deleteCart(i))
                             }}>X</button></td>
                             <td>{item.title}</td>
-                            <td><img src={item.image} alt={item.title} style={{ width: '100px', height: '80px' }} /></td>
+                            <td><img src={item.image} alt={item.title}/></td>
                             <td>{item.price} $</td>
                             <td>
                                 <button style={{ margin: '2px', cursor: "pointer" }} onClick={() => {
@@ -50,7 +50,7 @@ const Cart = () => {
                     )
                 })}
                 <tr>
-                    <td colSpan="5">Total: </td>
+                    <td id="total" colSpan="5">TOTAL: </td>
                     <td><b>{Number(TotalCart).toFixed(2)} $</b></td>
                 </tr>
             </tbody>

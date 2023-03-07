@@ -1,0 +1,16 @@
+.cartFormat{
+    width: 95vw;
+    img{
+        width: 10vw;
+    }
+
+    #total{
+        text-align: right;
+        font-weight: bold;
+    }
+
+    td{
+        padding: 5% 0%;
+        // border: 1px solid black;
+    }
+}

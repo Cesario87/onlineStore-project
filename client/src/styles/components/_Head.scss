@@ -1,0 +1,40 @@
+.formatHead{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    gap: 8%;
+    padding: 0 2%;
+    background-color: rgb(9, 18, 28);
+    position: fixed; 
+
+    h1{
+        color:white;
+    }
+
+    h3{
+        color:white;
+    }
+
+    #cartIconContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8%;
+    }
+
+    #carrito{
+        width: 40%;
+        background-color: white;
+        border-radius: 10px; 
+        padding: 5px;
+    }
+
+    #numberCarrito{
+        color: white;
+        border: 1px solid white;
+        width: 30%;
+        border-radius: 50px;
+    }
+}
+
