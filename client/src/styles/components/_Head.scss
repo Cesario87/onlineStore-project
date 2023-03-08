@@ -1,46 +1,90 @@
-.formatHead{
+.formatHead {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
     gap: 50%;
     padding: 0 2%;
     background-color: #4D455D;
     position: fixed;
     width: 100%;
 
-    h3{
-        color:#edf731;
+    a {
         text-decoration: none;
     }
 
-    #cartIconContainer{
+    h3 {
+        color: #d8ff2a;
+        text-decoration: none;
+    }
+
+    #cartIconContainer {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 8%;
     }
 
-    #carrito{
+    #carrito {
         width: 30%;
         background-color: #F5FFC9;
-        border-radius: 10px; 
+        border-radius: 10px;
         padding: 5px;
     }
 
-    #numberCarrito{
+    #numberCarrito {
         color: white;
         border: 1px solid white;
         width: 30%;
         border-radius: 50px;
     }
-
-    // h3:hover {
-    //     color: rgb(186, 102, 172);
-    //   }
-      
-    //   img:hover {
-    //     filter: brightness(50%);
-    //   }
 }
 
+@media screen and (min-width: 1366px) {
+    .formatHead {
+        gap: 20%;
+
+        h3 {
+            font-size: 150%;
+            margin-left: 15vw;
+        }
+
+        #carrito {
+            width: 10%;
+        }
+
+        #numberCarrito {
+            width: 15%;
+            font-size: x-large;
+        }
+
+        h3:hover {
+            color: rgb(186, 102, 172);
+        }
+
+        img:hover {
+            filter: brightness(50%);
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+    .formatHead {
+        gap: 50%;
+
+        #carrito {
+            width: 20%;
+        }
+
+        h3 {
+            font-size: 150%;
+            margin-left: 15vw;
+        }
+        #numberCarrito {
+            width: 15%;
+            font-size: x-large;
+        }
+
+    }
+}

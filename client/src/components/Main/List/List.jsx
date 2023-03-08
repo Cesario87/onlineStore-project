@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
-const List = ({ sortCriteria, sortOrder }) => {
+const List = ({ sortCriteria, sortOrder, searchQuery }) => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
   const numberItems = useSelector(state => state.numberItems);
 
   const [scroll, setScroll] = useState(0);
-
 
   const detectScroll = () => {
     setScroll(window.pageYOffset);
@@ -57,10 +55,11 @@ const List = ({ sortCriteria, sortOrder }) => {
   return (
     <div>
       <div>
-        <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-        {/* <button onClick={handleSearch}>Search</button> */}
+        <button onClick={() => handlePageChange(currentPage - 1)}>←</button>
+        <span>Page {currentPage}</span>
+        <button onClick={() => handlePageChange(currentPage + 1)}>→</button>
       </div>
-      <div>
+      <div id="listFormat">
       {articles.map((article) => (
         <Cards key={article.id} article={article} />
       ))}
@@ -69,9 +68,9 @@ const List = ({ sortCriteria, sortOrder }) => {
       </Link>
       </div>
       <div>
-        <button onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+        <button onClick={() => handlePageChange(currentPage - 1)}>←</button>
         <span>Page {currentPage}</span>
-        <button onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+        <button onClick={() => handlePageChange(currentPage + 1)}>→</button>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const Cards = ({ article }) => {
     <div className="cardsFormat">
       <img src={article.image} alt={article.name} />
       <h2>{article.name}</h2>
-      <p>${article.price}</p>
+      <h3>${article.price}</h3>
       <Valoration valoration={article.valoration} className="gold-stars" />
       <button
         onClick={() => {
