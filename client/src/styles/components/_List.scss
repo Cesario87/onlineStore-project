@@ -1,0 +1,11 @@
+@media screen and (min-width: 1366px) {
+    #listFormat{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    button{
+        height: 500vh;
+    }
+}

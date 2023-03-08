@@ -5,34 +5,32 @@ import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
-const List = ({ sortCriteria, sortOrder }) => {
+const List = ({ sortCriteria, sortOrder, searchQuery }) => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState('');
   const numberItems = useSelector(state => state.numberItems);
 
   const [scroll, setScroll] = useState(0);
 
+  const detectScroll = () => {
+    setScroll(window.pageYOffset);
+  }
 
-    const detectScroll = () => {
-        setScroll(window.pageYOffset);
+  let cart = document.getElementById("cartFixed");
+  useEffect(() => {
+    window.addEventListener('scroll', detectScroll)
+
+    if (scroll > 100) {
+      cart.style.position = "fixed";
     }
-
-    let cart = document.getElementById("cartFixed");
-    useEffect(() => {
-        window.addEventListener('scroll', detectScroll)
-
-        if (scroll > 100) {
-            cart.style.position = "fixed";
-        }
-        else if (cart !== null) {
-            cart.style.position = "inherit";
-        }
-        return () => {
-            window.removeEventListener('scroll', detectScroll)
-        }
-        // eslint-disable-next-line
-    }, [scroll]);
+    else if (cart !== null) {
+      cart.style.position = "inherit";
+    }
+    return () => {
+      window.removeEventListener('scroll', detectScroll)
+    }
+    // eslint-disable-next-line
+  }, [scroll]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -56,23 +54,23 @@ const List = ({ sortCriteria, sortOrder }) => {
 
   return (
     <div>
-      <h1>Articles</h1>
       <div>
-        <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-        {/* <button onClick={handleSearch}>Search</button> */}
+        <button onClick={() => handlePageChange(currentPage - 1)}>←</button>
+        <span>Page {currentPage}</span>
+        <button onClick={() => handlePageChange(currentPage + 1)}>→</button>
       </div>
+      <div id="listFormat">
       {articles.map((article) => (
         <Cards key={article.id} article={article} />
-        
       ))}
       <Link id='cartFixed' to="/cart" title='Shopping cart'>
-                    <img src="https://i.pinimg.com/originals/15/bb/55/15bb559cdd28f56d7c17b00498b4a946.png" alt="shopping cart" />
-                    <span>{numberItems}</span>
-                </Link>
+        <span>{numberItems}</span>
+      </Link>
+      </div>
       <div>
-        <button onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+        <button onClick={() => handlePageChange(currentPage - 1)}>←</button>
         <span>Page {currentPage}</span>
-        <button onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+        <button onClick={() => handlePageChange(currentPage + 1)}>→</button>
       </div>
     </div>
   );
