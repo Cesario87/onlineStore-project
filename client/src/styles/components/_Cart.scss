@@ -1,5 +1,6 @@
 .cartFormat{
     width: 95vw;
+    margin-top: 25%;
     img{
         width: 10vw;
     }
@@ -12,5 +13,41 @@
     td{
         padding: 5% 0%;
         // border: 1px solid black;
+    }
+
+    button{
+        padding: 4% 8%;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .cartFormat{
+        width: 50vw;
+        margin-top: 10%;
+        font-size: 200%;
+
+        img{
+            width: 7vw;
+        }
+
+        button{
+            padding: 0% 8% 3% 8%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+    .cartFormat{
+        width: 80vw;
+        margin-top: 10%;
+        font-size: 200%;
+
+        img{
+            width: 16vw;
+        }
+
+        button{
+            padding: 0% 8% 3% 8%;
+        }
     }
 }

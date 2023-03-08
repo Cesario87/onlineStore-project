@@ -32,7 +32,7 @@ const Cart = () => {
                         <tr key={i} i={i}>
                             <td><button style={{ cursor: "pointer" }} onClick={() => {
                                 dispatch(deleteCart(i))
-                            }}>X</button></td>
+                            }}>🗙</button></td>
                             <td>{item.title}</td>
                             <td><img src={item.image} alt={item.title}/></td>
                             <td>{item.price} $</td>
