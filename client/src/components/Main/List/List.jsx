@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Cards from "./Card";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 
 const List = ({ sortCriteria, sortOrder, searchQuery }) => {
   const [articles, setArticles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const numberItems = useSelector(state => state.numberItems);
+  // const numberItems = useSelector(state => state.numberItems);
 
   const [scroll, setScroll] = useState(0);
 
@@ -64,7 +64,7 @@ const List = ({ sortCriteria, sortOrder, searchQuery }) => {
         <Cards key={article.id} article={article} />
       ))}
       <Link id='cartFixed' to="/cart" title='Shopping cart'>
-        <span>{numberItems}</span>
+        {/* <span>{numberItems}</span> */}
       </Link>
       </div>
       <div>
