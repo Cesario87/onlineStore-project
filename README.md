@@ -1,4 +1,4 @@
-# REACT front-end and back-end project - Online Store App
+# MERN - Online Store App
 
 AUTHOR 🧑
 - [César Alba](https://github.com/Cesario87)
@@ -18,3 +18,5 @@ TECHNOLOGIES & TECHNIQUES 👨‍💻
 Header with cart, browser, Sorting Buttons & List of articles. <br> 
 ### /cart
 Summary of chosen articles to bought. <br> 
+
+![search](https://github.com/Cesario87/onlineStore-project/client/public/assets/store.PNG)
