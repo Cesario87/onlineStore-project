@@ -26,6 +26,8 @@ Summary of chosen articles to bought. <br>
 </p>
 
 ```bash
-npm install
-npm run clientinstall
-npm run dev
+npm install``` 
+```bash
+npm run clientinstall``` 
+```bash
+npm run dev```
