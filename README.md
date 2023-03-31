@@ -19,4 +19,4 @@ Header with cart, browser, Sorting Buttons & List of articles. <br>
 ### /cart
 Summary of chosen articles to bought. <br> 
 
-![search](https://github.com/Cesario87/onlineStore-project/client/public/assets/store.PNG)
+![search](https://github.com/Cesario87/onlineStore-project/client/public/assets/store.png)
