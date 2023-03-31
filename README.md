@@ -21,8 +21,6 @@ Summary of chosen articles to bought. <br>
 
 ![search](https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/store.PNG)
 
-![cart](https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/cart.PNG)
-
-<p align="right">
+<p align="center">
   <img src="https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/cart.PNG" alt="cart">
 </p>
