@@ -20,3 +20,5 @@ Header with cart, browser, Sorting Buttons & List of articles. <br>
 Summary of chosen articles to bought. <br> 
 
 ![search](https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/store.PNG)
+
+![cart](https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/cart.PNG)
