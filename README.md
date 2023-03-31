@@ -25,4 +25,17 @@ Summary of chosen articles to bought. <br>
   <img src="https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/cart.PNG" alt="cart">
 </p>
 
-```npm install```
+```bash
+npm install
+<!-- Copy this code block to clipboard -->
+<p align="center">
+  <a href="javascript:void(0)" onclick="copyCodeBlock()">
+    <img src="https://i.imgur.com/1KbWNCR.png" alt="Copy to clipboard" height="33">
+  </a>
+</p>
+<script>
+  function copyCodeBlock() {
+    var codeBlock = document.querySelector('pre').innerText;
+    navigator.clipboard.writeText(codeBlock);
+  }
+</script>
