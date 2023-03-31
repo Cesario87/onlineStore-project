@@ -27,3 +27,5 @@ Summary of chosen articles to bought. <br>
 
 ```bash
 npm install
+npm run clientinstall
+npm run dev
