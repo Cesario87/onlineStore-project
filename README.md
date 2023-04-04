@@ -18,6 +18,8 @@ TECHNOLOGIES & TECHNIQUES 👨‍💻
 
 
 ## Commands to run locally:
+After cloning the repository you will need to run the following:
+(Note that you will need to add an .env file with the data indicated in the .env.example)
 ```bash
 npm install
 ```
