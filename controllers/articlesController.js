@@ -1,15 +1,10 @@
-const articles = require('../models/articles');
+const Article = require('../schemas/articles');
 
 const renderArticles = async (req, res) => {
-    try {
-        const allArticles = await articles.getAllArticles(req);
-        res.status(200).json(allArticles);
-    } catch (err) {
-        console.log(err);
-        res.status(500).send('Error retrieving articles');
-    }
+    const articles = await Article.findAll();
+    res.status(200).json(articles);
 }
 
 module.exports = {
     renderArticles
-}
+};
