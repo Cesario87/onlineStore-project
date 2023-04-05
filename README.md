@@ -14,8 +14,17 @@ TECHNOLOGIES & TECHNIQUES 👨‍💻
 - SASS/SCSS
 - Redux
 - Mobile first
-- Deploy: Render --> (https://onlinestore-project.onrender.com)
+- Deploy: Render --> (https://e-commerce-dbjf.onrender.com/)
 
+## Routes 🌐
+### / 
+Header with cart, browser, Sorting Buttons & List of articles. <br> 
+![search](https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/store.PNG)
+### /cart
+Summary of chosen articles to be bought. <br> 
+<p align="center">
+  <img src="https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/cart.PNG" alt="cart">
+</p>
 
 ## Commands to run locally:
 After cloning the repository you will need to run the following:
@@ -30,13 +39,5 @@ npm run clientinstall
 npm run dev
 ```
 
-## Routes 🌐
-### / 
-Header with cart, browser, Sorting Buttons & List of articles. <br> 
-![search](https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/store.PNG)
-### /cart
-Summary of chosen articles to be bought. <br> 
-<p align="center">
-  <img src="https://github.com/Cesario87/onlineStore-project/blob/main/client/public/assets/cart.PNG" alt="cart">
-</p>
+
 
