@@ -1,12 +1,12 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
-if (!process.env.DB_URL) {
+if (!process.env.DB_URL_RENDER) {
   console.error('Error: Por favor, asegúrese de que la variable de entorno DB_URL esté definida.');
   process.exit(1);
 }
 
-const db = new Sequelize(process.env.DB_URL, {
+const db = new Sequelize(process.env.DB_URL_RENDER, {
   dialect: 'postgres',
   logging: false,
   dialectOptions: {
