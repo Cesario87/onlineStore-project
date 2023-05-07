@@ -14,7 +14,7 @@ TECHNOLOGIES & TECHNIQUES 👨‍💻
 - SASS/SCSS
 - Redux
 - Mobile first
-- Deploy: Render --> (https://onlinestore-project.onrender.com)
+- Deploy: Render --> (https://e-commerce-e9rm.onrender.com)
 
 
 ## Commands to run locally:
