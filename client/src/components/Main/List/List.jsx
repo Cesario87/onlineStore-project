@@ -38,7 +38,7 @@ const List = ({ sortCriteria, sortOrder, searchQuery }) => {
 
   useEffect(() => {
     async function fetchArticles() {
-      const url = `${process.env.REACT_APP_API_URL}/articles?page=${currentPage}&sortCriteria=${sortCriteria}&sortOrder=${sortOrder}&q=${searchQuery}`;
+      const url = `http://localhost:5000/articles?page=${currentPage}&sortCriteria=${sortCriteria}&sortOrder=${sortOrder}&q=${searchQuery}`;
       const response = await axios.get(url);
       const articlesWithUUID = response.data.map((article) => {
         return {
